@@ -1,0 +1,379 @@
+<html>
+<head>
+<title>
+Onboarding Info Compiler
+</title>
+<style>
+.border{
+border:1px solid black;
+width:160px;
+}
+table{
+         font-weight:bold;
+		 font-size:110%
+}
+#Contractor_Form,#Permanent_Form{
+                  position:relative;
+				  top:30px;
+}
+</style>
+</head>
+<body bgcolor="F0FFF0">
+<div id="new_emp">
+<form name="radio1">
+<h1><b>Onboarding Info Compiler</b></h1><b>Compile for:</b>&nbsp;&nbsp;
+          <input type="radio" name="emp" value="Contractor" onChange="newEmp(this.form)" />Contractor
+          <input type="radio" name="emp" value="Permanent" onChange="newEmp(this.form)"/>Employee
+
+</form>
+</div>
+
+<!--Content Below is Contractor's Form-->
+
+<div id="Contractor_Form" style="display:none">  <!--Custom form for Contractor with labels and textfields displayed through Table-->
+  
+  <h2><u>Contractor's Form</u></h2><hr>
+  <h5 style="text-align:center">Note:fields marked with<span style="color:red">*</span>are compulsory</h5>
+ 
+ 
+ <form id="myForm"  name="ContractorsForm" > 
+	<table cellpadding="8">
+	 <tr>      
+	     <td><label>First Name:</label><sup style="color:red" >*</sup></td>     
+	     <td><input type="text" class="border" name="f_name"  placeholder="Enter First Name" /></td>
+		 <td><h5 id="req_field_msg_c0" style="color:red"></h5></td>
+		 <td style="width:200px"></td>
+	</tr>
+	 <tr>
+	     <td>Middle Name:</td> 
+	     <td><input type="text" class="border" name="m_name" placeholder="Enter Middle Name" /></td>
+	 </tr>
+	 <tr>
+	     <td>Last Name:<sup style="color:red" >*</sup></td>
+		 <td><input type="text" class="border" name="l_name" placeholder="Enter Last Name" /></td>
+		 <td><h5 id="req_field_msg_c1" style="color:red"  ></h5></td>
+	 </tr>
+     <tr> 	 
+	     <td>Gender:<sup style="color:red" >*</sup></td>
+		 <td><input type="radio" name="gender" value="male"/>Male</td>
+		 <td><input type="radio" name="gender" value="female"/>Female</td>
+		 <td><h5 style="color:red" id="req_field_msg_c2" ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Classification:<sup style="color:red" >*</sup></td>
+         <td> <select  class="border" name="classification" />
+		         <option></option>
+				 <option>40-Consultant</option>
+			  </select>
+		</td>	 
+		 <td><h5 style="color:red" id="req_field_msg_c3" ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Star System Rate:<sup style="color:red" >*</sup></td>
+         <td> <input type="text" class="border" name="star_s_rate" placeholder="Enter Star System Rate" /></td>
+		 <td><h5 id="req_field_msg_c4" style="color:red"  ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Payment Rate:<sup style="color:red" >*</sup></td>
+		 <td> <input type="text" class="border" name="rateofpayment" placeholder="Enter Payment Rate" /></td>
+		 <td><h5 id="req_field_msg_c5" style="color:red"  ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Office:<sup style="color:red" >*</sup></td>
+         <td> <select  class="border" name="office_region" />
+		         <option></option>
+				 <option>Bangalore</option>
+			     <option>Pune</option>
+			  </select>
+		 </td>
+		 <td><h5 id="req_field_msg_c6" style="color:red"  ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Practice:<sup style="color:red" >*</sup></td>
+         <td> <select class="border" name="practice_location" />
+		          <option></option>
+				  <option>General Office</option>
+			  </select>
+		 </td>
+		 <td><h5 id="req_field_msg_c7" style="color:red"  ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Service Line:<sup style="color:red" >*</sup></td>
+         <td> <select  class="border" name="service_line" />
+		          <option></option>
+				  <option>Information Technology</option>
+			  </select>
+		 </td>
+		 <td><h5 id="req_field_msg_c8" style="color:red"  ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Department:<sup style="color:red" >*</sup></td>
+		 <td><select class="border" name="deptt_no" />
+		         <option></option>
+				 <option>64</option>
+			 </select>
+		 </td>
+		 <td><h5 id="req_field_msg_c9" style="color:red"  ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Sub-Department:<sup style="color:red" >*</sup></td>
+		 <td><select  class="border" name="sub_deptt" />
+		         <option></option>
+				 <option>Custom</option>
+			 </select>
+		 </td>
+		 <td><h5 id="req_field_msg_c10" style="color:red" ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Time Reviewer:<sup style="color:red" >*</sup></td>
+	     <td><select  class="border" id="drop_down1_c" name="time_reviewer">
+		         <option></option>
+			</select>
+		</td>
+		 <td><input type="file" id="file_name1_c" /></td>
+		 <td><output id="list1_c" ></output></td>
+	 </tr>
+	 <tr>
+    	 <td>Team Coordinator:<sup style="color:red" >*</sup></td>
+	     <td><select  class="border" id="drop_down2_c" name="team_coordinator">
+		        <option></option>
+             </select>
+		 </td>
+		 <td><input type="file" id="file_name2_c"  /></td>
+		 <td><output id="list2_c"></output></td>	 
+	</tr>
+	 <tr>
+	     <td>Start Date:<sup style="color:red" >*</sup></td>
+  		 <td><input type="text" class="border" name="start_date" placeholder="Enter Start Date" /></td>
+		 <td><h5 id="req_field_msg_c11" style="color:red"  ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Full Time:<sup style="color:red" >*</sup></td>
+ 		 <td><input type="radio"  name="full_time" value="Yes">Yes</td>
+		 <td><input type="radio"  name="full_time" value="No">No</td>
+		 <td><h5 style="color:red" id="req_field_msg_c12" ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Capacity Hours:<sup style="color:red" >*</sup></td>
+		 <td><input type="text" class="border" name="capacity_hrs" placeholder="Enter Capacity Hours" /></td>
+		 <td><h5 id="req_field_msg_c13" style="color:red"  ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>SpiderLogic E-mail Required:<sup style="color:red" >*</sup></td>
+		 <td><input type="radio" name="spider_e_mail" value="Yes" />Yes</td>
+		 <td><input type="radio" name="spider_e_mail" value="No" />No</td>
+		 <td><h5 style="color:red" id="req_field_msg_c14" ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Wipfli E-mail Required:<sup style="color:red" >*</sup></td>
+		 <td><input type="radio" name="wipfli_e_mail" value="Yes" />Yes</td>
+		 <td><input type="radio" name="wipfli_e_mail" value="No" />No</td>
+		 <td><h5 style="color:red" id="req_field_msg_c15" ></h5></td>
+	 </tr>
+	 <tr>
+	    <td>SpiderLogic JIRA Required:<sup style="color:red" >*</sup></td>
+		 <td><input type="radio" name="spider_jira" value="Yes" />Yes</td>
+		 <td><input type="radio" name="spider_jira" value="No" />No</td>
+		 <td><h5 style="color:red" id="req_field_msg_c16" ></h5></td>
+	</tr>
+	 <tr>
+	     <td>CMIC JIRA Required:<sup style="color:red" >*</sup></td>
+ 		 <td><input type="radio" name="cmic_jira" value="Yes" />Yes</td>
+		 <td><input type="radio" name="cmic_jira" value="No" />No</td>
+		 <td><h5 style="color:red" id="req_field_msg_c17" ></h5></td>
+	 </tr>
+	 <tr>
+	     <td>Duration of Work Order:<sup style="color:red" >*</sup></td>
+		 <td><input type="text" class="border" name="work_duration" placeholder="Enter Duration of Work" /></td>
+		 <td><h5 id="req_field_msg_c18" style="color:red"  ></h5></td>
+	 </tr>
+	 </table>
+     
+	 <input type="button" value="Submit" onClick="contractorFormValue(this.form)"  /><!--Submit Button invoking a method onClick
+                                                               	 event having form's object as parameter i.e. The form's data is displayed with the help of script-->
+  </form>
+  </div>
+ 
+ <!--Content below is Permanent Employee's Form-->
+
+ <div id="Permanent_Form" style="display:none"> <!--Custom form for Contractor with labels and textfields displayed through Table-->
+  
+  <h2><u>Permanent Employee's Form</u></h2><hr>
+  <h5 style="text-align:center">Note:fields marked with<span style="color:red">*</span>are compulsory</h5>
+ 
+ 
+  <form  id="myForm" name="PermanentsForm">
+    
+	<table  cellpadding="8">
+	     <tr>
+		     <td>First Name:<sup style="color:red" >*</sup></td>      
+	         <td><input type="text" class="border" name="f_name"  placeholder="Enter First Name" /></td>
+		     <td><h5 id="req_field_msg_p0" style="color:red"></h5></td>
+		     <td style="width:200px"></td>
+		 </tr>
+		 <tr>
+		     <td>Middle Name:</td> 
+	         <td><input type="text" class="border" name="m_name" placeholder="Enter Middle Name" /></td>
+         </tr>
+		 <tr>
+		     <td>Last Name:<sup style="color:red" >*</sup></td>
+		     <td><input type="text" class="border" name="l_name" placeholder="Enter Last Name" /></td>
+		     <td><h5 id="req_field_msg_p1" style="color:red"  ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>Gender:<sup style="color:red" >*</sup></td>
+		     <td><input type="radio" name="gender" value="male"/>Male</td>
+		     <td><input type="radio" name="gender" value="female"/>Female</td>
+		     <td><h5 style="color:red" id="req_field_msg_p2" ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>Classification:<sup style="color:red" >*</sup></td>
+             <td> <select class="border" name="classification" />
+		             <option></option>
+				     <option>40-Consultant</option>
+			      </select>
+		     </td>	 
+		     <td><h5 style="color:red" id="req_field_msg_p3" ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>Star System Rate:<sup style="color:red" >*</sup></td>
+             <td> <input type="text" class="border" name="star_s_rate" placeholder="Enter Star System Rate" /></td>
+		     <td><h5 id="req_field_msg_p4" style="color:red"  ></h5></td>
+	     </tr>
+		 <tr> 
+		     <td>Office:<sup style="color:red" >*</sup></td>
+             <td> <select class="border" name="office_region" />
+		             <option></option>
+				     <option>Bangalore</option>
+			         <option>Pune</option>
+			      </select>
+		     </td>
+		     <td><h5 id="req_field_msg_p5" style="color:red"  ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>Practice:<sup style="color:red" >*</sup></td>
+             <td> <select class="border" name="practice_location" />
+		              <option></option>
+				      <option>General Office</option>
+			      </select>
+	   	     </td>
+		     <td><h5 id="req_field_msg_p6" style="color:red"  ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>Service Line:<sup style="color:red" >*</sup></td>
+             <td> <select class="border" name="service_line" />
+		             <option></option>
+				     <option>Information Technology</option>
+			      </select>
+		     </td>
+		     <td><h5 id="req_field_msg_p7" style="color:red"  ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>Department:<sup style="color:red" >*</sup></td>
+		     <td><select class="border" name="deptt_no" />
+		            <option></option>
+				    <option>64</option>
+			     </select>
+		     </td>
+		     <td><h5 id="req_field_msg_p8" style="color:red"  ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>Sub-Department:<sup style="color:red" >*</sup></td>
+		     <td><select class="border" name="sub_deptt" />
+		            <option></option>
+				    <option>Custom</option>
+			     </select>
+		     </td>
+		     <td><h5 id="req_field_msg_p9" style="color:red" ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>Time Reviewer:<sup style="color:red" >*</sup></td>
+			 <td><select class="border" id="drop_down1_p"  name="time_reviewer">
+	                <option></option>
+				 </select>
+			 </td>	 	
+             <td><input type="file" id="file_name1_p" multiple /></td>
+			 <td><output id="list1_p"></output></td>
+				 
+		 </tr>
+		 <tr>
+		     <td>Expense Reviewer:<sup style="color:red" >*</sup></td>
+             <td><select class="border" id="drop_down2_p" name="expense_reviewer">
+			     <option></option>
+				 </select>
+			 </td>	 
+			 <td><input type="file" id="file_name2_p" multiple /></td>
+             <td><output id="list2_p"></output></td>			 
+		</tr>
+		 <tr>
+		     <td>Team Coordinator:<sup style="color:red" >*</sup></td>
+		     <td><select class="border" id="drop_down3_p" name="team_coordinator">
+	             <option></option>
+				 </select>
+			 </td>	 
+			 <td><input type="file" id="file_name3_p" multiple /></td>
+			 <td><output id="list3_p"></output></td>
+		 </tr>
+		 <tr>
+		     <td>Start Date:<sup style="color:red" >*</sup></td>
+  		     <td><input type="text" class="border" name="start_date" placeholder="Enter Start Date" /></td>
+		     <td><h5 id="req_field_msg_p10" style="color:red"  ></h5></td>
+	     <tr>
+		     <td>Full Time:<sup style="color:red" >*</sup></td>
+ 		     <td><input type="radio" name="full_time" value="Yes">Yes</td>
+		     <td><input type="radio" name="full_time" value="No">No</td>
+		     <td><h5 style="color:red" id="req_field_msg_p11" ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>Capacity Hours:<sup style="color:red" >*</sup></td>
+		     <td><input type="text" class="border" name="capacity_hrs" placeholder="Enter Capacity Hours" /></td>
+		     <td><h5 id="req_field_msg_p12" style="color:red"  ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>SpiderLogic E-mail Required:<sup style="color:red" >*</sup></td>
+		     <td><input type="radio" name="spider_e_mail" value="Yes" />Yes</td>
+		     <td><input type="radio" name="spider_e_mail" value="No" />No</td>
+		     <td><h5 style="color:red" id="req_field_msg_p13" ></h5></td>
+	     </tr>
+		 <tr>
+	         <td>Wipfli E-mail Required:<sup style="color:red" >*</sup></td>
+		     <td><input type="radio" name="wipfli_e_mail" value="Yes" />Yes</td>
+		     <td><input type="radio" name="wipfli_e_mail" value="No" />No</td>
+		     <td><h5 style="color:red" id="req_field_msg_p14" ></h5></td>
+	    </tr>
+		 <tr>
+		      <td>SpiderLogic JIRA Required:<sup style="color:red" >*</sup></td>
+		      <td><input type="radio" name="spider_jira" value="Yes" />Yes</td>
+		      <td><input type="radio" name="spider_jira" value="No" />No</td>
+		      <td><h5 style="color:red" id="req_field_msg_p15" ></h5></td>
+	     </tr>
+		 <tr>
+		     <td>CMIC JIRA Required:<sup style="color:red" >*</sup></td>
+ 		     <td><input type="radio" name="cmic_jira" value="Yes" />Yes</td>
+		     <td><input type="radio" name="cmic_jira" value="No" />No</td>
+		     <td><h5 style="color:red" id="req_field_msg_p16" ></h5></td>
+	     </tr>
+		 
+		 <tr>
+		     <td>Gross Salary Component<br>(not including 12-month Bonus):<sup style="color:red" >*</sup></td>
+		     <td><input type="text" class="border" name="gross_salary" /></td>
+			 <td><h5 style="color:red" id="req_field_msg_p17" ></h5></td>
+	    </tr>
+		 <tr>	
+		     <td>12-month Bonus(if any):<sup style="color:red" >*</sup></td>
+			 <td><input type="text" class="border" name="bonus" /></td>
+			 <td><h5 style="color:red" id="req_field_msg_p18" ></h5></td>
+         </tr>	 
+	 
+    </table>
+     <input type="button" value="Submit" onClick="permanentFormValue(this.form)"/><!--Submit Button invoking a method onClick event, having
+                                                                   form's object as parameter i.e. The form's data is displayed with the help of script-->
+  </form>
+</div>
+ 
+</body>
+
+</html>
+<script src="myNewJS/myNewJS.js">
+
+</script>
